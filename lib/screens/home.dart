@@ -39,36 +39,36 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text("Shopping App"),
       ),
-      body: ListView.builder(
-        itemCount: data == null ? 0 : data.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(data[index]["id"].toString()),
-            subtitle: Text(data[index]["title"]),
-          );
-        },
-      ),
-      // body: Padding(
-      //   padding: const EdgeInsets.all(8.0),
-      //   child: GridView.builder(
-      //     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-      //         maxCrossAxisExtent: 200,
-      //         childAspectRatio: 3 / 2,
-      //         crossAxisSpacing: 20,
-      //         mainAxisSpacing: 20),
-      //     itemCount: myProducts.length,
-      //     itemBuilder: (BuildContext ctx, index) {
-      //       return Container(
-      //         alignment: Alignment.center,
-      //         child: Text(myProducts[index]["name"]),
-      //         decoration: BoxDecoration(
-      //           color: Colors.blue[600],
-      //           borderRadius: BorderRadius.circular(15),
-      //         ),
-      //       );
-      //     },
-      //   ),
+      // body: ListView.builder(
+      //   itemCount: data == null ? 0 : data.length,
+      //   itemBuilder: (context, index) {
+      //     return ListTile(
+      //       title: Text(data[index]["id"].toString()),
+      //       subtitle: Text(data[index]["title"]),
+      //     );
+      //   },
       // ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20),
+          itemCount: data == null ? 0 : data.length,
+          itemBuilder: (BuildContext ctx, index) {
+            return Container(
+              alignment: Alignment.center,
+              child: Text(data[index]["title"]),
+              decoration: BoxDecoration(
+                color: Colors.blue[600],
+                borderRadius: BorderRadius.circular(15),
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }
