@@ -1,36 +1,44 @@
 import 'package:flutter/material.dart';
 
-class SingleItemOnGridview extends StatefulWidget {
-  @override
-  _SingleItemOnGridviewState createState() => _SingleItemOnGridviewState();
-}
+class SingleItemOnGridview extends StatelessWidget {
+  final String id;
+  final String albumId;
+  final String thumbnailUrl;
 
-class _SingleItemOnGridviewState extends State<SingleItemOnGridview> {
+  SingleItemOnGridview({
+    @required this.id,
+    @required this.albumId,
+    @required this.thumbnailUrl,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.all(5),
       child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(5),
         child: Column(
           children: [
-            Image.network(
-                "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg"),
             Container(
-              child: Text("all pricing"),
+              child: Image.network(thumbnailUrl),
+              height: 50,
+              width: 50,
+            ),
+            Container(
+              child: Text(albumId),
             ),
             Container(
               child: Padding(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(5),
                 child: Row(
                   children: [
                     Container(
-                      child: Text("this is price"),
+                      child: Text(id),
                     ),
                     Container(
                       alignment: Alignment.topLeft,
-                      margin: EdgeInsets.only(left: 150),
+                      margin: EdgeInsets.only(left: 10),
                       child: Icon(Icons.shopping_cart),
                     ),
                   ],

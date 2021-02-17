@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shopping_app/widgets/singel_item_on_gridview.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -52,20 +53,25 @@ class _HomeState extends State<Home> {
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200,
+              maxCrossAxisExtent: 300,
               childAspectRatio: 3 / 2,
               crossAxisSpacing: 20,
               mainAxisSpacing: 20),
           itemCount: data == null ? 0 : data.length,
           itemBuilder: (BuildContext ctx, index) {
-            return Container(
-              alignment: Alignment.center,
-              child: Text(data[index]["title"]),
-              decoration: BoxDecoration(
-                color: Colors.blue[600],
-                borderRadius: BorderRadius.circular(15),
-              ),
-            );
+            return SingleItemOnGridview(
+                id: data[index]["id"].toString(),
+                albumId: data[index]["albumId"].toString(),
+                thumbnailUrl: data[index]["thumbnailUrl"]);
+
+            //  Container(
+            //   alignment: Alignment.center,
+            //   child: Text(data[index]["title"]),
+            //   decoration: BoxDecoration(
+            //     color: Colors.blue[600],
+            //     borderRadius: BorderRadius.circular(15),
+            //   ),
+            // );
           },
         ),
       ),
