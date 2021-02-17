@@ -14,6 +14,9 @@ class SingleItemOnGridview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
       elevation: 4,
       margin: EdgeInsets.all(5),
       child: Padding(
@@ -21,9 +24,16 @@ class SingleItemOnGridview extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              child: Image.network(thumbnailUrl),
-              height: 50,
-              width: 50,
+              child: Image.network(
+                thumbnailUrl,
+                height: 80,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(
+              width: 6,
+              height: 6,
             ),
             Container(
               child: Text(albumId),
@@ -32,6 +42,7 @@ class SingleItemOnGridview extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(5),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
                       child: Text(id),

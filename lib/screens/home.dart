@@ -54,9 +54,9 @@ class _HomeState extends State<Home> {
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 300,
-              childAspectRatio: 3 / 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20),
+              childAspectRatio: 1,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10),
           itemCount: data == null ? 0 : data.length,
           itemBuilder: (BuildContext ctx, index) {
             return SingleItemOnGridview(
