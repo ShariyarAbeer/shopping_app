@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './screens/home.dart';
+import './screens/list_test.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(),
+      home: ListTest(),
     );
   }
 }
